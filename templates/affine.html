@@ -11,7 +11,7 @@
         <h1>Affine Cipher</h1>
         <br><ha></ha></br>
     </div>
-    <form action = "/affine" method = "post">
+    <form action = "/affine" method = "post" name = "affineForm">
         <div align = "center">
             Multiplier:
             <input name = "multiplier" type = "number" placeholder="Enter multiplier" />
@@ -26,13 +26,13 @@
             </ha></br>
         </div>
         <div align = "center">
-            <input type = "submit" value = "Encrypt" />
-            <input type = "submit" value = "Decrypt" />
+            <button type = "submit" name = "operation" value = "Encrypt">Encrypt</button>
+            <button type = "submit" name = "operation" value = "Decrypt">Decrypt</button>
         </div>
         <br><ha>
         </ha></br>
         <div align = "center">
-            <input name = "message" type = "text" />
+            {{.}}
             <br><ha>
             </ha></br>
         </div>
