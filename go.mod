@@ -1,4 +1,4 @@
-module crypto_app
+module cryptoapp
 
 go 1.20
 

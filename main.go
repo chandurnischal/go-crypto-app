@@ -6,29 +6,23 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type AffineAPI struct {
-	Multiplier int    `json:"multiplier"`
-	Offset     int    `json:"offset"`
-	Message    string `json:"message"`
-	Encrypt    bool   `json:"encrypt"`
+func mainHandler(context *gin.Context) {
+	context.HTML(http.StatusOK, "main.html", nil)
 }
 
 func affineHandler(context *gin.Context) {
-	var aff AffineAPI
-	err := context.BindJSON(&aff)
-	if err != nil {
-		context.HTML(http.StatusNotFound, "result.html", gin.H{"message": "invalid input"})
-	}
-	if aff.Encrypt {
-		context.HTML(http.StatusOK, "result.html", gin.H{"message": "encrypt"})
+	if context.Request.Method == "GET" {
+		context.HTML(http.StatusOK, "affine.html", nil)
 		return
 	}
-	context.HTML(http.StatusOK, "result.html", gin.H{"message": "decrypt"})
+	context.IndentedJSON(http.StatusOK, gin.H{"message": "hello world"})
 }
 
 func main() {
 	server := gin.Default()
 	server.LoadHTMLGlob("templates/*.html")
+	server.GET("/", mainHandler)
 	server.GET("/affine", affineHandler)
+	server.POST("/affine", affineHandler)
 	server.Run(":8080")
 }
