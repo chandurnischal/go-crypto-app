@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autokey</title>
+</head>
+<body>
+    <div align = "center">
+        <h1>Autokey Cipher</h1>
+    </div>
+    <div align = "center">
+        <form action = "/autokey" method = "post">
+            <div>
+                Message: 
+                <input type = "text" name = "message" placeholder="Enter message" />
+                <br><br>
+                Key: 
+                <input type = "text" name = "key" placeholder="Enter key" /><br><br>
+            </div>
+            <div>
+                <button type = "submit" name = "operation" value = "Encrypt">Encrypt</button>
+                <button type = "submit" name = "operation" value = "Decrypt">Decrypt</button>
+            </div>
+        </form>
+    </div>
+
+    <br><ha>
+    </ha></br>
+
+    <div align = "center">
+        {{.}}
+        <br><ha>
+        </ha></br>
+    </div>
+</body>
+</html>
