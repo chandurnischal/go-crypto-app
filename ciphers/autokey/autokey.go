@@ -68,13 +68,14 @@ func (a Autokey) Encrypt(plaintext string) string {
 }
 
 func (a Autokey) Decrypt(ciphertext string) string {
-	temp := a.key
+
 	var plaintext string
+	ciphertext = a.removeSpecialCharacters(ciphertext)
 	for i, v := range ciphertext {
 		shifter := strings.IndexByte(a.alphabet, byte(a.key[i]))
 		t := a.alphabetShifter(shifter)
 		index := strings.IndexRune(t, v)
-		temp += string(a.alphabet[index])
+		a.key += string(a.alphabet[index])
 		plaintext += string(a.alphabet[index])
 
 	}
@@ -87,5 +88,7 @@ func Operation(message, key, operation string) (string, error) {
 	if operation == "Encrypt" {
 		return auto.Encrypt(message), err
 	}
+
 	return auto.Decrypt(message), err
+
 }

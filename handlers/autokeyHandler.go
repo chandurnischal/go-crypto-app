@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"cryptoapp/pkg/autokey"
+	"cryptoapp/ciphers/autokey"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,9 +18,10 @@ func AutokeyHandler(context *gin.Context) {
 	res, err := autokey.Operation(message, key, operation)
 
 	if err != nil {
-		context.HTML(http.StatusNotAcceptable, "autokey.html", res)
+		context.HTML(http.StatusNotFound, "autokey.html", err)
 		return
 	}
+
 	context.HTML(http.StatusOK, "autokey.html", res)
 
 }

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"cryptoapp/pkg/atbash"
+	"cryptoapp/ciphers/atbash"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

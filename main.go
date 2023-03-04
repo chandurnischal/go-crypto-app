@@ -7,6 +7,9 @@ import (
 )
 
 func main() {
+	// auto, err := autokey.Operation("koihdjzvhxuwfyydcprktprekgeb", "fortification", "Decrypt")
+
+	// fmt.Println(auto, err)
 
 	server := gin.Default()
 	server.LoadHTMLGlob("templates/*.html")

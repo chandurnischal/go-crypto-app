@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"cryptoapp/pkg/affine"
+	"cryptoapp/ciphers/affine"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
