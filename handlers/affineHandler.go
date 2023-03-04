@@ -19,7 +19,7 @@ func AffineHandler(context *gin.Context) {
 	res, err := affine.Operation(m, o, message, action)
 
 	if err != nil {
-		context.HTML(http.StatusNotAcceptable, "affine.html", res)
+		context.HTML(http.StatusNotAcceptable, "affine.html", err)
 		return
 	}
 	context.HTML(http.StatusOK, "affine.html", res)
