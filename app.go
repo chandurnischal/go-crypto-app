@@ -29,5 +29,9 @@ func main() {
 	server.GET("/caesar", handlers.CasarHandler)
 	server.POST("/caesar", handlers.CasarHandler)
 
+	server.GET("/coltrans", handlers.ColTransHandler)
+	server.POST("/coltrans", handlers.ColTransHandler)
+
 	server.Run(":8080")
+
 }
