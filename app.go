@@ -26,6 +26,8 @@ func main() {
 	server.GET("/beaufort", handlers.BeaufortHandler)
 	server.POST("/beaufort", handlers.BeaufortHandler)
 
-	server.Run(":8080")
+	server.GET("/caesar", handlers.CasarHandler)
+	server.POST("/caesar", handlers.CasarHandler)
 
+	server.Run(":8080")
 }
