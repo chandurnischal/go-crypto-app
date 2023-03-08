@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROT13</title>
+</head>
+<body>
+    <div align = "center">
+        <h1>
+            ROT13 Cipher
+        </h1>
+    </div>
+    <form action = "/rot13" method = "post">
+        <div align = "center">
+            Message: 
+            <input type = "text" name = "message" />
+            <br><br>
+        </div>
+        <div align = "center">
+            <button type = "submit" name = "operation" value = "Encrypt">Encrypt</button>
+            <button type = "submit" name = "operation" value = "Decrypt">Decrypt</button>
+            <br><br>
+        </div>
+        <div align = "center">
+            {{.}}
+        </div>
+    </form>
+</body>
+</html>
