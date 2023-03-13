@@ -44,12 +44,14 @@ func (b Baconian) Encrypt(plaintext string) string {
 
 func (b Baconian) Decrypt(ciphertext string) string {
 	var plaintext string
+
+	if len(ciphertext)%5 != 0 {
+		return ciphertext
+	}
 	n := len(ciphertext)
 
 	for i := 0; i < n; i = i + 5 {
-		if unicode.IsPrint(rune(ciphertext[i])) {
-			plaintext += string(b.alphabet[b.binToDec(ciphertext[i:i+5])])
-		}
+		plaintext += string(b.alphabet[b.binToDec(ciphertext[i:i+5])])
 	}
 
 	return plaintext
