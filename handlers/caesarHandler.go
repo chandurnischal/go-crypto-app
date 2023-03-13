@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CasarHandler(context *gin.Context) {
+func CaesarHandler(context *gin.Context) {
 	if context.Request.Method == "GET" {
 		context.HTML(http.StatusOK, "caesar.html", nil)
 		return
